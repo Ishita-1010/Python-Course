@@ -102,8 +102,10 @@ for val in a:
 
 print(res)
 
-string = input("Enter a string:")
+import numpy
 
+string = input("Enter a string:")
+ 
 vowel = 0
 consonant = 0 
 
