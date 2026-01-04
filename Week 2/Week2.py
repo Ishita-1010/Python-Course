@@ -257,3 +257,47 @@ print(a)
 print(b)
 print(c.tolist())
 
+#Manual Search
+
+list_1 = list(map(int, input("Enter first list").split()))
+search_item = int(input("Enter a number to search"))
+
+found = False
+
+for val in list_1:
+    if val == search_item:
+        found = True
+        print(f" '{val}' found in the list")
+        break
+
+if not found:
+    print(f" '{search_item}' not found in the list")
+
+list_1 = input("Enter first list").split()
+search_item = input("Enter an item to search").lower()
+
+found = False
+
+for item in list_1:
+    if item.lower() == search_item:
+        found = True
+        print(f" '{item}' found in the list")
+        break
+
+if not found:
+    print(f" '{search_item}' not found in the list")
+
+a = int(input("Enter first number"))
+b = int(input("Enter second number"))
+c = int(input("Enter third number"))
+
+if a & b < c:
+    print(f" '{c}' is the greatest number")
+
+elif b & c < a:
+    print(f" '{a}' is the greatest number")
+    
+else:
+    print(f" '{b}' is the greatest number")
+
+    
