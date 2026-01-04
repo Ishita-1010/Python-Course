@@ -185,15 +185,15 @@ print(replaced_string)
 
 #remove duplicate from list
 
-list = input("Enter a list")
+my_list = input("Enter a list")
 
 unique_list = []
 
-for item in list:
+for item in my_list:
     if item not in unique_list:
         unique_list.append(item)
 
-print(list)
+print(my_list)
 print(unique_list)
 
 
@@ -202,3 +202,20 @@ my_list = input("Enter numbers")
 unique_list = list(dict.fromkeys(my_list))
 
 print(unique_list)
+
+my_list = list(map(int, input("Enter a list").split()))
+
+smallest = min(my_list)
+largest = max(my_list)
+
+print("The smallest element is:", smallest)
+print("The largest element is:", largest)
+
+my_list = list(map(int, input("Enter a list").split()))
+
+n = 3
+
+rotated_list = my_list[-n:] + my_list[:-n]
+
+print(my_list)
+print(rotated_list)
