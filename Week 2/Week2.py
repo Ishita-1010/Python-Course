@@ -203,6 +203,8 @@ unique_list = list(dict.fromkeys(my_list))
 
 print(unique_list)
 
+#smallest and largest
+
 my_list = list(map(int, input("Enter a list").split()))
 
 smallest = min(my_list)
@@ -210,6 +212,8 @@ largest = max(my_list)
 
 print("The smallest element is:", smallest)
 print("The largest element is:", largest)
+
+#rotate list
 
 my_list = list(map(int, input("Enter a list").split()))
 
@@ -219,3 +223,37 @@ rotated_list = my_list[-n:] + my_list[:-n]
 
 print(my_list)
 print(rotated_list)
+
+#merge sorted list
+
+list1 = list(map(int, input("Enter first list").split()))
+list2 = list(map(int, input("Enter second list").split()))
+
+list3 = sorted(list1 + list2)
+
+print(list1)
+print(list2)
+print(list3)
+
+import heapq
+
+a = list(map(int, input("Enter first list").split()))
+b = list(map(int, input("Enter second list").split()))
+
+c= list(heapq.merge(a,b))
+
+print(a)
+print(b)
+print(c)
+
+import numpy as np
+
+a = np.array(input("Enter first list").split())
+b = np.array(input("Enter second list").split())
+
+c = np.sort(np.concatenate((a,b)))
+
+print(a)
+print(b)
+print(c.tolist())
+
