@@ -102,8 +102,6 @@ for val in a:
 
 print(res)
 
-import numpy
-
 string = input("Enter a string:")
  
 vowel = 0
@@ -117,3 +115,90 @@ for i in string:
 
 print(string)
 print("Vowels:", vowel, "Consonant:", consonant)
+
+#Set
+
+set1 = {1,2,3,4,5}
+
+set1.add(6)
+
+print(set1)
+
+set1.update([7,8])
+
+print(set1)
+
+set1.remove(4)
+
+print(set1)
+
+set1.discard(10)
+
+print(set1)
+
+# Palindrome
+
+string = input("Enter a string")
+
+if string == string[::-1]:
+    print("This is palindrome")
+
+else:
+    print("This is not palindrome")
+
+#Character frequency
+
+string = input("Enter a string")
+frequency = {}
+
+for char in string:
+    if char in frequency:
+        frequency[char] += 1
+    else:
+        frequency[char] = 1
+
+print(string)
+print(frequency)
+
+#replace vowel with *
+
+string = input("Enter a string")
+
+v = "aeiouAEIOU"
+rep = "*"
+replaced_string = string
+
+for vowel in v:
+    replaced_string = replaced_string.replace(vowel, rep)
+
+
+print(string)
+print(replaced_string)
+
+string = input("Enter a string")
+
+vowels = "aeiouAEIOU"
+
+replaced_string = "".join("*" if char in vowels else char for char in string)
+
+print(replaced_string)
+
+#remove duplicate from list
+
+list = input("Enter a list")
+
+unique_list = []
+
+for item in list:
+    if item not in unique_list:
+        unique_list.append(item)
+
+print(list)
+print(unique_list)
+
+
+my_list = input("Enter numbers")
+
+unique_list = list(dict.fromkeys(my_list))
+
+print(unique_list)
