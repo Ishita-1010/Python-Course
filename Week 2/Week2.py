@@ -300,4 +300,169 @@ elif b & c < a:
 else:
     print(f" '{b}' is the greatest number")
 
+# Dictionary
+
+d1 = {1: 'Ishita', 2: 'Sourabh', 3: 'Ishani'}
+print(d1)
+
+d2 = dict(a= "Ishita", b= "Sourabh", c= "Ishani")
+print(d2)
+
+d3 = {'name':'Ishita', 1: 'Python', (1,2): [1,2,4]}
+
+print(d3)
+print(d3["name"])
+print(d3.get("name"))
+print(d3[1])
+print(d3.get(1))
+print(d3[(1,2)])
+print(d3.get((1,2)))
+
+d1 = {1: 'Ishita', 2: 'Sourabh', 3: 'Ishani'}
+print(d1)
+
+d1["age"] = 30
+
+print(d1)
+
+d2 = dict(a= "Ishita", b= "Sourabh", c= "Ishani")
+print(d2)
+
+d3 = {'name':'Ishita', 1: 'Python', (1,2): [1,2,4]}
+
+d2["a"] = "Ishitaaa"
+
+print(d2)
+
+del d1[3]
+
+print(d1)
+
+val = d1.pop(2)
+print(val)
+
+key, val = d2.popitem()
+print(f"Key: {key}, Value: {val}")
+
+d3.clear()
+print(d3)
+
+d4 = {1: 'Ishita', 2: 'Sourabh',3: {'A': 'Welcome', 'B': 'To', 'C': 'Python'}}
+print(d4)
+
+keys = ['a','b','c','d','e']
+values = [1,2,3,4,5]
+
+myDict = {k:v for (k,v) in zip(keys,values)}
+
+print(myDict)
+
+dic = dict.fromkeys(range(6), True)
+
+print(dic)
+
+dic1 = {x: x**2 for x in [1,2,3,4,5]}
+print(dic1)
+
+dic2 = {x.upper(): x*3 for x in 'coding'}
+print(dic2)
+
+mydict1 = {x:x**3 for x in range(10) if x**3 % 4 == 0}
+print(mydict1)
+
+word = 'ISHITA'
+
+d6 = {x:{y: x+y for y in word} for x in word}
+
+print(d6)
+
+#Lambda
+n = [1,2,3,4,5,6,7,8]
+even = filter(lambda x: x%2==0, n)
+print(list(even))
+
+calc = lambda x, y: (x+y, x*y)
+res = calc(3,4)
+print(res)
+
+a=[1,2,3,4,5]
+b= map(lambda x:x*2, a)
+print(list(b))
+
+from functools import reduce
+a = [1,2,3,4,5]
+b = reduce(lambda x,y: x*y, a)
+print(b)
+
+#MAP
+
+def double(val):
+    return val * 2
+
+a = [1,2,3,4,5]
+res = list(map(double, a))
+print(res)
+
+a = [1,2,3,4]
+b = [5,6,7,8]
+
+res = map(lambda x,y: x+y,a,b)
+print(list(res))
+
+fruits = ['apple','banana','cherry']
+res = map(str.upper, fruits)
+print(list(res))
+
+#Dictionary Creation from list
+
+a = ["gfg", "is", "best"]
+k = "def_key_"
+
+res = {f"{k}{ele}": ele for ele in a}
+print(res)
+
+a=["gfg", "is", "best"]
+k= "def_key_"
+
+res = dict.fromkeys(map(lambda x: k+x, a))
+
+for ele in a:
+    res[k+ele] = ele
+
+print(res)
+
+a=["gfg", "is", "best"]
+k= "def_key_"
+
+res={}
+for ele in a:
+    res[k+ele] = ele
+
+print(res)
+
+#Dictionary Creation from string
+
+import ast
+
+s = "{'A':10, 'B': 20, 'C': 30}"
+
+res = ast.literal_eval(s)
+print(res, type(res))
+
+import json
+
+s = "{'A':10, 'B': 20, 'C': 30}".replace("'", '"')
+res = json.loads(s)
+
+print(res, type(res))
+
+#Dictionary from Text File
+
+with open('input.txt', 'w') as f:
+    f.write("name: Ishita\nage: 30\ncountry: India")
+
+with open('input.txt', 'r') as file:
+    res = {key.strip(): value.strip() for key, value in 
+        (line.split(':', 1) for line in file)}
     
+print(res)
