@@ -1,3 +1,0 @@
-name: Ishita
-age: 30
-country: India
