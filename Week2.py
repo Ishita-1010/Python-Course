@@ -466,3 +466,79 @@ with open('input.txt', 'r') as file:
         (line.split(':', 1) for line in file)}
     
 print(res)
+
+with open('input.txt', 'w')as f:
+    f.write("name: Ishita\nage: 30\ncountry: India")
+
+with open('input.txt', 'r') as file:
+    res = dict(line.strip().split(':', 1) for line in file)
+
+print(res)
+
+import csv
+with open('input.txt', 'w')as f:
+    f.write("name: Ishita\nage: 30\ncountry: India")
+
+with open('input.txt', 'r') as file:
+    reader = csv.reader(file, delimiter=":")
+    res = {row[0].strip(): row[1].strip() for row in reader if len(row)==2}
+
+print(res)
+
+with open('input.txt', 'w')as f:
+    f.write("name: Ishita\nage: 30\ncountry: India")
+
+with open('input.txt', 'r') as file:
+    for line in file:
+        key, value = line.strip().split(':', 1)
+        res[key.strip()] = value.strip()
+
+print(res)
+
+#Create Dictionary Of Tuples
+
+d = {("India", "USA"): 'Country',
+       ("Red", "Blue", "Green"): 'Colours'}
+
+print(d)
+
+d = dict([
+    ('Country',('USA', 'India')),
+    ('Colours', ('Red', 'Blue', 'Green'))
+])
+
+print(d)
+
+a = ['Country', 'Colours']
+b = [('USA', 'India'), ('Red', 'Blue', 'Green')]
+
+d = {name: feature for name , feature in zip(a,b)}
+
+print(d)
+
+from collections import defaultdict
+
+d = defaultdict(tuple)
+d['Country'] = ('USA', 'India')
+d['Colours'] = ('Red', 'Blue', 'Green')
+
+print(d)
+
+# Create a Dictionary with Key as First Character
+# and Value as Words Starting with that Character - Python
+
+t = "Hello World"
+res = defaultdict(list)
+
+for w in t.split():
+    res[w[0]].append(w)
+
+print(dict(res))
+
+t = "Welcome to Python"
+res = {}
+
+for w in t.split():
+    res.setdefault(w[0], []).append(w)
+
+print(res)
