@@ -542,3 +542,301 @@ for w in t.split():
     res.setdefault(w[0], []).append(w)
 
 print(res)
+
+#Loops
+
+# For Loop
+
+s = "gfg"
+
+for x in s:
+    print(x)
+    print(x)
+
+for x in range(20):
+    if x%6 == 0:
+        print(x)
+
+l = [10,20,30,40]
+
+for i in range (len(l)):
+    print(i, l[i])
+
+for i in range(0, 10, 2):
+    print(i)
+
+for i in 'geeksforgeeks':
+    if i=='e' or i=='s':
+        continue
+    print(i)
+
+for n in range(5,10):
+    print(n, end="")
+
+l = [1,2,3,4,5,6,7,8,9,10]
+
+sum = 0
+
+for num in l:
+    sum+=num
+print(sum)
+
+l = [1,2,3,4,5,6,7,8,9,10]
+
+sum = 0
+
+for num in l:
+    if num%2 == 0:
+        continue
+    sum += num
+        
+print(sum)
+
+a = [[1,2,3], [4,5,6],[7,8,9]]
+
+for row in a:
+    for num in row:
+        if num==3:
+            continue
+        print(num)
+
+i = 0
+
+while i < 10:
+    if i == 5:
+        i+=1
+        continue
+    print(i)
+    i += 1
+
+i = 0
+
+while i<10:
+    i+=1
+    if i == 5:
+        continue
+    print(i)
+
+x = 10
+
+if x > 5:
+    pass  # Placeholder for future logic
+else:
+    print("x is 5 or less")
+
+for i in range(5):
+    if i == 3:
+        pass
+    else:
+        print(i)
+
+for i in range(5):
+    if i == 3:
+        pass
+    print(i)
+
+#If else
+
+age = int(input("Enter the age"))
+
+if age <=12:
+    print("Ticket is free")
+else:
+    print("Ticket is not free")
+
+age = int(input("Enter the age"))
+
+ticket = "Free" if age <= 12 else "Not free"
+
+print(f"Status: {ticket}")
+
+s = input("Enter a string")
+
+uppercase_count = 0
+lowercase_count = 0
+
+for char in s:
+    if char.isupper():
+        uppercase_count += 1
+    elif char.islower():
+        lowercase_count += 1
+    else:
+        pass
+print(f"String: {s}")
+print(f"No of uppercase character: {uppercase_count}")
+print(f"No of lowercase character: {lowercase_count}")
+
+a = int(input("Enter 1st number"))
+b = int(input("Enter 2nd number"))
+c = int(input("Enter 3rd number"))
+
+if a>b:
+    if a>c:
+        print("a is greatest")
+    else:
+        print("c is greatest")
+else:
+    if b>c:
+        print("b is greatest")
+    else:
+        print("c is greatest")
+
+a = int(input("Enter 1st number"))
+b = int(input("Enter 2nd number"))
+c = int(input("Enter 3rd number"))
+d = int(input("Enter 4th number"))
+
+if a>b:
+    if a>c:
+        if a>d:
+            print("a is greatest")
+        else:
+            print("d is greatest")
+else:
+    if b>c:
+        if b>d:
+            print("b is greatest")
+        else:
+            print("d is greatest")
+    else:
+        if c>d:
+            print("c is greatest")
+        else:
+            print("d is greatest")
+
+# While loop
+
+cnt = 0
+
+while (cnt<3):
+    cnt = cnt + 1
+    print("Hello World")
+
+i = 0
+a = 'geeksforgeeks'
+
+while i < len(a):
+    if a[i] == 'e' or a[i] == 's':
+        i += 1
+        continue
+    print(a[i])
+    i += 1
+
+# Nested Loops
+
+x = [1,2]
+y = [4,5]
+
+for i in x:
+    for j in y:
+        print(i,j)
+
+for i in range(2,5):
+    for j in range(1,11):
+        print(i, "*", j, "=", i*j)
+    print()
+
+l1 = ['I am', 'You are']
+l2 = ['healthy', 'fine', 'geek']
+
+l2_size = len(l2)
+
+for item in l1:
+    print("start outer loop")
+    i = 0
+    while(i<l2_size):
+        print(item, l2[i])
+        i = i+1
+    print("end loop")
+
+for i in range(2,4):
+    for j in range(1,11):
+        if i==j:
+            break
+        print(i, "*", j, "=", i*j)
+    print()
+
+for i in range(2,4):
+    for j in range(1,11):
+        if i==j:
+            continue
+        print(i, "*", j, "=", i*j)
+    print()
+
+#Multiplication table
+num = int(input("Enter the number for multiplication:"))
+
+limit = int(input("Enter the limit for multiplication:"))
+
+print(f"\nMultiplication table of {num}:")
+
+for i in range(1, limit + 1):
+    result = num * i
+    print(f"{num} * {i} = {result}")
+
+num = int(input("Enter the number for multiplication:"))
+
+limit = int(input("Enter the limit for multiplication:"))
+
+print(f"\nMultiplication table of {num}:")
+
+for i in range(1, limit + 1):
+    print(num, "*", i, "=", num*i)
+
+
+# Sum of digits
+num = int(input("Enter a number"))
+sum1 = 0
+
+while num > 0:
+    sum1 += num % 10
+    num //= 10
+print(sum1)
+
+
+num = input("Enter a number")
+sum_digits = sum(int(digit)for digit in num)
+print("Sum of digits:", sum_digits)
+
+# Prime numbers in range
+
+lower = int(input("Enter the lower range:"))
+upper = int(input("Enter the upper range:"))
+
+print(f"Prime numbers between {lower} and {upper} are:")
+
+for num in range(lower, upper + 1):
+    if num > 1:
+        for i in range(2, int(num*0.5)+1):
+            if (num % i) == 0:
+                break
+        else:
+            print(num)
+
+number = int(input("Enter a number:"))
+
+if number <= 1:
+    print(False)
+else:
+    is_prime = True
+    for i in range(2, int(number*0.5)+1):
+        if number % i == 0:
+            is_prime = False
+            break
+    print(is_prime)
+
+
+
+#Factorial program
+
+num = int(input("Enter a number"))
+factorial = 1
+
+if num < 0:
+    print("Factorial does not exist for negative numbers")
+elif num == 0:
+    print("The factorial of 0 is 1")
+else:
+    for i in range(1, num+1):
+        factorial = factorial * i
+    print(f"The factorial of {num} is {factorial}")
